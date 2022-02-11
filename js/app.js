@@ -49,7 +49,7 @@ console.log(boardNumber)
 fruitPosition = "sq" + boardNumber.toString()
 console.log(fruitPosition)
 const id = document.querySelector(`#${fruitPosition}`)
-id.innerText = "X"
+id.innerHTML = "<span>X</span>"
 console.log(id)
 
 }

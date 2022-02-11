@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  
 }
 
 section.board {
@@ -37,7 +38,7 @@ section.board {
 }
 
 div {
-  border: 3px solid white;
+  border: 1px solid white;
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
