@@ -31,8 +31,8 @@ body {
 
 section.board {
   display: grid;
-  grid-template-rows: repeat(10, 5vmin);
-  grid-template-columns: repeat(10, 5vmin);
+  grid-template-rows: repeat(10, 10vmin);
+  grid-template-columns: repeat(10, 10vmin);
   grid-gap: 0vmin;
   margin: 0 auto ;
 }
@@ -48,15 +48,23 @@ div {
 h1{ 
   font-size: 50px;
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: 'Cinzel', serif;
+  font-family: 'Festive', cursive;
+  font-family: 'Josefin Slab', serif;
 }
 
 h2{
   font-size: 12px;
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: 'Cinzel', serif;
+  font-family: 'Festive', cursive;
+  font-family: 'Josefin Slab', serif;
 }
 
-/* button{
-margin: 0 25em;
-}   */
+button{
+  width: 20%;
+  margin: 0 40%;
+  font-family: 'Cinzel', serif;
+  font-family: 'Festive', cursive;
+  font-family: 'Josefin Slab', serif;
+}   
