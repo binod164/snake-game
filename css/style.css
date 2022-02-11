@@ -1,0 +1,65 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: white;
+/* Use a system font, if none are available use an available sans-sarif   font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: flex;
+	justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  width: 500px;
+  height: 500px;
+  text-align: center; 
+  padding: 100px;
+  background-image: url("../assets/backgroundImage.jpeg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+div{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+h1{ 
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+h2{
+  font-size: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+button{
+  color: white;
+  padding:5px;
+  margin-bottom: 5px;
+  border-radius: 10%;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
