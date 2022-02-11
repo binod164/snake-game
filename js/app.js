@@ -44,13 +44,13 @@ function snakeMoves(){
 }
 
 function createFruit(){
-// boardNumber = Math.floor(Math.random()*100)
-// console.log(boardNumber)
-// fruitPosition = "sq" + boardNumber.toString()
-// console.log(fruitPosition)
-// const id = document.querySelector(`#${fruitPosition}`)
-// id.innerText = "X"
-// console.log(id)
+boardNumber = Math.floor(Math.random()*100)
+console.log(boardNumber)
+fruitPosition = "sq" + boardNumber.toString()
+console.log(fruitPosition)
+const id = document.querySelector(`#${fruitPosition}`)
+id.innerText = "X"
+console.log(id)
 
 }
 createFruit()
