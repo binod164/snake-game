@@ -80,10 +80,8 @@ function arrowUp(){
     }else{
     snakePosition.innerHTML = ""
     id = Math.abs(id - 10);
-    console.log(id)
     snakePosition = document.querySelector(`#sq${id}`)
     snakePosition.innerHTML = "X"
-    console.log("Up")
     }
 }
 
@@ -106,24 +104,51 @@ function arrowDown(){
   id = id + 10;
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.innerHTML = "X"
-  console.log("Down")
 }
 }
 
 function arrowLeft(){
+  if(snakePosition === document.querySelector("#sq0")
+  ||snakePosition === document.querySelector("#sq10")
+  ||snakePosition === document.querySelector("#sq20")
+  ||snakePosition === document.querySelector("#sq30")
+  ||snakePosition === document.querySelector("#sq40")
+  ||snakePosition === document.querySelector("#sq50")
+  ||snakePosition === document.querySelector("#sq60")
+  ||snakePosition === document.querySelector("#sq70")
+  ||snakePosition === document.querySelector("#sq80")
+  ||snakePosition === document.querySelector("#sq90")){
+
+  leftColumn()
+
+  }else{
   snakePosition.innerHTML = ""
-  console.log("Left")
   id = id - 1;
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.innerHTML = "X"
 }
+}
 
 function arrowRight(){
+  if(snakePosition === document.querySelector("#sq9")
+  ||snakePosition === document.querySelector("#sq19")
+  ||snakePosition === document.querySelector("#sq29")
+  ||snakePosition === document.querySelector("#sq39")
+  ||snakePosition === document.querySelector("#sq49")
+  ||snakePosition === document.querySelector("#sq59")
+  ||snakePosition === document.querySelector("#sq69")
+  ||snakePosition === document.querySelector("#sq79")
+  ||snakePosition === document.querySelector("#sq89")
+  ||snakePosition === document.querySelector("#sq99")){
+
+  rightColumn()
+
+  }else{
   snakePosition.innerHTML = ""
   id = id + 1;
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.innerHTML = "X"
-  console.log("Right")
+}
 }
 
 function topRow(){
@@ -239,114 +264,114 @@ function bottomRow(){
   }
 
   function leftColumn(){
-    // if(snakePosition === document.querySelector("#sq0")){
-    //   snakePosition.innerHTML = ""
-    //   id = 90;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq1")){
-    //   snakePosition.innerHTML = ""
-    //   id = 91;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq2")){
-    //   snakePosition.innerHTML = ""
-    //   id = 92;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq3")){
-    //   snakePosition.innerHTML = ""
-    //   id = 93;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq4")){
-    //   snakePosition.innerHTML = ""
-    //   id = 94;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq5")){
-    //   snakePosition.innerHTML = ""
-    //   id = 95;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq6")){
-    //   snakePosition.innerHTML = ""
-    //   id = 96;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq7")){
-    //   snakePosition.innerHTML = ""
-    //   id = 97;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq8")){
-    //   snakePosition.innerHTML = ""
-    //   id = 98;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }else if(snakePosition === document.querySelector("#sq9")){
-    //   snakePosition.innerHTML = ""
-    //   id = 99;
-    //   snakePosition = document.querySelector(`#sq${id}`)
-    //   snakePosition.innerHTML = "X"
-    // }
+    if(snakePosition === document.querySelector("#sq0")){
+      snakePosition.innerHTML = ""
+      id = 9;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq10")){
+      snakePosition.innerHTML = ""
+      id = 19;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq20")){
+      snakePosition.innerHTML = ""
+      id = 29;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq30")){
+      snakePosition.innerHTML = ""
+      id = 39;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq40")){
+      snakePosition.innerHTML = ""
+      id = 49;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq50")){
+      snakePosition.innerHTML = ""
+      id = 59;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq60")){
+      snakePosition.innerHTML = ""
+      id = 69;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq70")){
+      snakePosition.innerHTML = ""
+      id = 79;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq80")){
+      snakePosition.innerHTML = ""
+      id = 89;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }else if(snakePosition === document.querySelector("#sq90")){
+      snakePosition.innerHTML = ""
+      id = 99;
+      snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.innerHTML = "X"
+    }
 
   }
 
 function rightColumn(){
-  // if(snakePosition === document.querySelector("#sq90")){
-  //   snakePosition.innerHTML = ""
-  //   id = 0;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq91")){
-  //   snakePosition.innerHTML = ""
-  //   id = 1;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq92")){
-  //   snakePosition.innerHTML = ""
-  //   id = 2;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq93")){
-  //   snakePosition.innerHTML = ""
-  //   id = 3;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq94")){
-  //   snakePosition.innerHTML = ""
-  //   id = 4;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq95")){
-  //   snakePosition.innerHTML = ""
-  //   id = 5;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq96")){
-  //   snakePosition.innerHTML = ""
-  //   id = 6;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq97")){
-  //   snakePosition.innerHTML = ""
-  //   id = 7;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq98")){
-  //   snakePosition.innerHTML = ""
-  //   id = 8;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }else if(snakePosition === document.querySelector("#sq99")){
-  //   snakePosition.innerHTML = ""
-  //   id = 9;
-  //   snakePosition = document.querySelector(`#sq${id}`)
-  //   snakePosition.innerHTML = "X"
-  // }
+  if(snakePosition === document.querySelector("#sq9")){
+    snakePosition.innerHTML = ""
+    id = 0;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq19")){
+    snakePosition.innerHTML = ""
+    id = 10;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq29")){
+    snakePosition.innerHTML = ""
+    id = 20;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq39")){
+    snakePosition.innerHTML = ""
+    id = 30;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq49")){
+    snakePosition.innerHTML = ""
+    id = 40;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq59")){
+    snakePosition.innerHTML = ""
+    id = 50;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq69")){
+    snakePosition.innerHTML = ""
+    id = 60;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq79")){
+    snakePosition.innerHTML = ""
+    id = 70;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq89")){
+    snakePosition.innerHTML = ""
+    id = 80;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }else if(snakePosition === document.querySelector("#sq99")){
+    snakePosition.innerHTML = ""
+    id = 90;
+    snakePosition = document.querySelector(`#sq${id}`)
+    snakePosition.innerHTML = "X"
+  }
 
 }
 function createFruit(){
