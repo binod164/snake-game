@@ -7,7 +7,7 @@
 let highScore
 let score
 let boardNumber
-let fruitPosition
+let idNumber
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -20,37 +20,55 @@ const hardBtn = document.querySelector(".hard")
 easyBtn.addEventListener("click" ,handleClick)
 mediumBtn.addEventListener("click" ,handleClick)
 hardBtn.addEventListener("click" ,handleClick)
-
+document.addEventListener("keydown", pressedKey)
+  
 
 /*-------------------------------- Functions --------------------------------*/
 init()
 
 function init(){
+score = 0;
+highScore = 10;
+const snakePosition = document.querySelector("#sq0")
+snakePosition.innerHTML = "X"
+render()
+}
+
+function render(){
 
 }
 
 function handleClick(){
-  createSnake();
   snakeMoves();
   createFruit();
-}
-
-function createSnake(){
-
 }
 
 function snakeMoves(){
 
 }
 
+function pressedKey(evt){
+  console.log(evt.code)
+  if(evt.code === "ArrowDown"){
+    console.log("Down")
+  }else if(evt.code === "ArrowUp"){
+    console.log("Up")
+  }else if(evt.code === "ArrowRight"){
+    console.log("Right")
+  }else if(evt.code === "ArrowLeft"){
+    console.log("Left")
+  }
+
+}
+
 function createFruit(){
 boardNumber = Math.floor(Math.random()*100)
 console.log(boardNumber)
-fruitPosition = "sq" + boardNumber.toString()
-console.log(fruitPosition)
-const id = document.querySelector(`#${fruitPosition}`)
-id.innerHTML = "<span>X</span>"
-console.log(id)
+idNumber = "sq" + boardNumber.toString()
+console.log(idNumber)
+const fruitPosition = document.querySelector(`#${idNumber}`)
+fruitPosition.innerHTML = "O"
 
 }
 createFruit()
+// pressedKey()
