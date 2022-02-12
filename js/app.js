@@ -8,6 +8,8 @@ let highScore
 let score
 let boardNumber
 let idNumber
+let snakePosition
+let id = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -27,10 +29,11 @@ document.addEventListener("keydown", pressedKey)
 init()
 
 function init(){
+snakePosition = document.querySelector(`#sq${id}`)
+snakePosition.innerHTML = "X"
 score = 0;
 highScore = 10;
-const snakePosition = document.querySelector("#sq0")
-snakePosition.innerHTML = "X"
+
 render()
 }
 
@@ -50,14 +53,66 @@ function snakeMoves(){
 function pressedKey(evt){
   console.log(evt.code)
   if(evt.code === "ArrowDown"){
-    console.log("Down")
+    arrowDown();
   }else if(evt.code === "ArrowUp"){
-    console.log("Up")
+    arrowUp();
   }else if(evt.code === "ArrowRight"){
-    console.log("Right")
+    arrowRight();
   }else if(evt.code === "ArrowLeft"){
-    console.log("Left")
+    arrowLeft();
   }
+
+}
+function arrowUp(){
+  // if(snakePosition === document.querySelector("#sq0")
+  // ||snakePosition === document.querySelector("#sq1")
+  // ||snakePosition === document.querySelector("#sq2")
+  // ||snakePosition === document.querySelector("#sq3")
+  // ||snakePosition === document.querySelector("#sq4")
+  // ||snakePosition === document.querySelector("#sq5")
+  // ||snakePosition === document.querySelector("#sq6")
+  // ||snakePosition === document.querySelector("#sq7")
+  // ||snakePosition === document.querySelector("#sq8")
+  // ||snakePosition === document.querySelector("#sq9")){
+  //   snakePosition.innerHTML = ""
+  //   id = 90;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  //   console.log("Up")
+  //   }else{
+  //   snakePosition.innerHTML = ""
+  //   id = id - 10;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  //   console.log("Up")
+  //   }
+}
+
+function arrowDown(){
+  // snakePosition.innerHTML = ""
+  // id = id + 10;
+  // snakePosition = document.querySelector(`#sq${id}`)
+  // snakePosition.innerHTML = "X"
+  // console.log("Down")
+}
+
+function arrowLeft(){
+  // snakePosition.innerHTML = ""
+  // console.log("Left")
+  // id = id - 1;
+  // snakePosition = document.querySelector(`#sq${id}`)
+  // snakePosition.innerHTML = "X"
+}
+
+function arrowRight(){
+  // snakePosition.innerHTML = ""
+  // id = id + 1;
+  // snakePosition = document.querySelector(`#sq${id}`)
+  // snakePosition.innerHTML = "X"
+  // console.log("Right")
+}
+
+function topRow(){
 
 }
 
