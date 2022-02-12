@@ -188,7 +188,7 @@ function bottomRow(){
       id = 0;
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.innerHTML = "X"
-    }else if(snakePosition === document.querySelector("#sq1")){
+    }else if(snakePosition === document.querySelector("#sq91")){
       snakePosition.innerHTML = ""
       id = 1;
       snakePosition = document.querySelector(`#sq${id}`)
@@ -238,6 +238,117 @@ function bottomRow(){
 
   }
 
+  function leftColumn(){
+    // if(snakePosition === document.querySelector("#sq0")){
+    //   snakePosition.innerHTML = ""
+    //   id = 90;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq1")){
+    //   snakePosition.innerHTML = ""
+    //   id = 91;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq2")){
+    //   snakePosition.innerHTML = ""
+    //   id = 92;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq3")){
+    //   snakePosition.innerHTML = ""
+    //   id = 93;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq4")){
+    //   snakePosition.innerHTML = ""
+    //   id = 94;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq5")){
+    //   snakePosition.innerHTML = ""
+    //   id = 95;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq6")){
+    //   snakePosition.innerHTML = ""
+    //   id = 96;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq7")){
+    //   snakePosition.innerHTML = ""
+    //   id = 97;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq8")){
+    //   snakePosition.innerHTML = ""
+    //   id = 98;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }else if(snakePosition === document.querySelector("#sq9")){
+    //   snakePosition.innerHTML = ""
+    //   id = 99;
+    //   snakePosition = document.querySelector(`#sq${id}`)
+    //   snakePosition.innerHTML = "X"
+    // }
+
+  }
+
+function rightColumn(){
+  // if(snakePosition === document.querySelector("#sq90")){
+  //   snakePosition.innerHTML = ""
+  //   id = 0;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq91")){
+  //   snakePosition.innerHTML = ""
+  //   id = 1;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq92")){
+  //   snakePosition.innerHTML = ""
+  //   id = 2;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq93")){
+  //   snakePosition.innerHTML = ""
+  //   id = 3;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq94")){
+  //   snakePosition.innerHTML = ""
+  //   id = 4;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq95")){
+  //   snakePosition.innerHTML = ""
+  //   id = 5;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq96")){
+  //   snakePosition.innerHTML = ""
+  //   id = 6;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq97")){
+  //   snakePosition.innerHTML = ""
+  //   id = 7;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq98")){
+  //   snakePosition.innerHTML = ""
+  //   id = 8;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }else if(snakePosition === document.querySelector("#sq99")){
+  //   snakePosition.innerHTML = ""
+  //   id = 9;
+  //   snakePosition = document.querySelector(`#sq${id}`)
+  //   snakePosition.innerHTML = "X"
+  // }
+
+}
 function createFruit(){
 boardNumber = Math.floor(Math.random()*100)
 console.log(boardNumber)
