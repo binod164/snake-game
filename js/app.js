@@ -5,7 +5,7 @@
 /*-------------------------------- Variables --------------------------------*/
 
 let highScore
-let score
+let playerScore
 let boardNumber
 let idNumber
 let snakePosition
@@ -33,8 +33,7 @@ init()
 function init(){
 snakePosition = document.querySelector(`#sq${id}`)
 snakePosition.style.backgroundColor = "green"
-// snakePosition.style.backgroundColor = "green"
-score = 0;
+playerScore = 0;
 highScore = 10;
 createFruit()
 render()
@@ -55,10 +54,9 @@ function snakeMoves(){
 
 function eatFruit(){
   if(snakePosition === fruitPosition){
-    score += 1
+    playerScore += 1
     createFruit()
     }
-    console.log(`score ${score}`)
 }
 
 function pressedKey(evt){
@@ -100,7 +98,7 @@ function arrowUp(){
     snakePosition = document.querySelector(`#sq${id}`)
     snakePosition.style.backgroundColor = "green"
   }
-  timeInterval = setTimeout(() => relateAction("ArrowUp"), 1000);
+  timeInterval = setTimeout(() => relateAction("ArrowUp"), 500);
   eatFruit()
 }
 
@@ -126,7 +124,7 @@ function arrowDown(){
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.style.backgroundColor = "green"
   }
-  timeInterval = setTimeout(() => relateAction("ArrowDown"), 1000);
+  timeInterval = setTimeout(() => relateAction("ArrowDown"), 500);
   // relateAction("ArrowDown")
   eatFruit()
 }
@@ -152,7 +150,7 @@ function arrowLeft(){
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.style.backgroundColor = "green"
   }
-  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 1000);
+  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 500);
   eatFruit()
 }
 
@@ -177,7 +175,7 @@ function arrowRight(){
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.style.backgroundColor = "green"
   }
-  timeInterval = setTimeout(() => relateAction("ArrowRight"), 1000);
+  timeInterval = setTimeout(() => relateAction("ArrowRight"), 500);
   eatFruit()
 }
 
