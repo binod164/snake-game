@@ -62,6 +62,7 @@ function pressedKey(evt){
 }
 
 function relateAction(userAction) {
+
   clearTimeout(timeInterval)
   if(userAction === "ArrowDown"){
     arrowDown()
