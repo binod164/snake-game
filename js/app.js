@@ -10,7 +10,8 @@ let boardNumber
 let idNumber
 let snakePosition
 let fruitPosition
-let id = 0;
+let id = 0
+let timeInterval
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -61,18 +62,23 @@ function eatFruit(){
 }
 
 function pressedKey(evt){
+  clearTimeout(timeInterval)
   console.log(evt.code)
-  if(evt.code === "ArrowDown"){
+  relateAction(evt.code)
+}
+
+function relateAction(userAction) {
+  if(userAction === "ArrowDown"){
     arrowDown();
-  }else if(evt.code === "ArrowUp"){
+  }else if(userAction === "ArrowUp"){
     arrowUp();
-  }else if(evt.code === "ArrowRight"){
+  }else if(userAction === "ArrowRight"){
     arrowRight();
-  }else if(evt.code === "ArrowLeft"){
+  }else if(userAction === "ArrowLeft"){
     arrowLeft();
   }
-
 }
+
 function arrowUp(){
   if(snakePosition === document.querySelector("#sq0")
     ||snakePosition === document.querySelector("#sq1")
@@ -94,10 +100,12 @@ function arrowUp(){
     snakePosition = document.querySelector(`#sq${id}`)
     snakePosition.style.backgroundColor = "green"
   }
+  timeInterval = setTimeout(() => relateAction("ArrowUp"), 1000);
   eatFruit()
 }
 
 function arrowDown(){
+  console.log("arrow down");
   if(snakePosition === document.querySelector("#sq90")
       ||snakePosition === document.querySelector("#sq91")
       ||snakePosition === document.querySelector("#sq92")
@@ -118,6 +126,8 @@ function arrowDown(){
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.style.backgroundColor = "green"
   }
+  timeInterval = setTimeout(() => relateAction("ArrowDown"), 1000);
+  // relateAction("ArrowDown")
   eatFruit()
 }
 
@@ -142,6 +152,7 @@ function arrowLeft(){
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.style.backgroundColor = "green"
   }
+  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 1000);
   eatFruit()
 }
 
@@ -166,6 +177,7 @@ function arrowRight(){
       snakePosition = document.querySelector(`#sq${id}`)
       snakePosition.style.backgroundColor = "green"
   }
+  timeInterval = setTimeout(() => relateAction("ArrowRight"), 1000);
   eatFruit()
 }
 
