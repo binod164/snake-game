@@ -27,7 +27,6 @@ leftBtn.addEventListener("click" ,handleClickLeft)
 rightBtn.addEventListener("click" ,handleClickRight)
 downBtn.addEventListener("click" ,handleClickDown)
 document.addEventListener("keydown", pressedKey)
-  
 
 /*-------------------------------- Functions --------------------------------*/
 init()
