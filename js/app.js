@@ -15,15 +15,17 @@ let timeInterval
 
 /*------------------------ Cached Element References ------------------------*/
 
-// const easyBtn = document.querySelector(".easy")
-// const mediumBtn = document.querySelector(".medium")
-// const hardBtn = document.querySelector(".hard")
+const upBtn = document.querySelector(".up")
+const leftBtn = document.querySelector(".left")
+const rightBtn = document.querySelector(".right")
+const downBtn = document.querySelector(".down")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-// easyBtn.addEventListener("click" ,handleClick)
-// mediumBtn.addEventListener("click" ,handleClick)
-// hardBtn.addEventListener("click" ,handleClick)
+upBtn.addEventListener("click" ,handleClickUp)
+leftBtn.addEventListener("click" ,handleClickLeft)
+rightBtn.addEventListener("click" ,handleClickRight)
+downBtn.addEventListener("click" ,handleClickDown)
 document.addEventListener("keydown", pressedKey)
   
 
@@ -31,41 +33,37 @@ document.addEventListener("keydown", pressedKey)
 init()
 
 function init(){
-snakePosition = document.querySelector(`#sq${id}`)
-snakePosition.style.backgroundColor = "green"
-playerScore = 0;
-highScore = 10;
-createFruit()
-render()
+  snakePosition = document.querySelector(`#sq${id}`)
+  snakePosition.style.backgroundColor = "green"
+  playerScore = 0;
+  highScore = 10;
+  createFruit()
 }
 
-function render(){
-
+function handleClickUp(){
+  relateAction("ArrowUp")
 }
 
-function handleClick(){
-  snakeMoves();
-  // createFruit();
+function handleClickLeft(){
+  relateAction("ArrowLeft")
 }
 
-function snakeMoves(){
-
+function handleClickRight(){
+  relateAction("ArrowRight")
 }
 
-function eatFruit(){
-  if(snakePosition === fruitPosition){
-    playerScore += 1
-    createFruit()
-    }
+function handleClickDown(){
+  relateAction("ArrowDown")
 }
 
 function pressedKey(evt){
-  clearTimeout(timeInterval)
+  // clearTimeout(timeInterval)
   console.log(evt.code)
   relateAction(evt.code)
 }
 
 function relateAction(userAction) {
+  clearTimeout(timeInterval)
   if(userAction === "ArrowDown"){
     arrowDown();
   }else if(userAction === "ArrowUp"){
@@ -103,7 +101,6 @@ function arrowUp(){
 }
 
 function arrowDown(){
-  console.log("arrow down");
   if(snakePosition === document.querySelector("#sq90")
       ||snakePosition === document.querySelector("#sq91")
       ||snakePosition === document.querySelector("#sq92")
@@ -125,7 +122,6 @@ function arrowDown(){
       snakePosition.style.backgroundColor = "green"
   }
   timeInterval = setTimeout(() => relateAction("ArrowDown"), 500);
-  // relateAction("ArrowDown")
   eatFruit()
 }
 
@@ -402,11 +398,23 @@ function rightColumn(){
   }
 
 }
-function createFruit(){
-boardNumber = Math.floor(Math.random()*100)
-idNumber = "sq" + boardNumber.toString()
-fruitPosition = document.querySelector(`#${idNumber}`)
-fruitPosition.style.backgroundColor = "red"
 
+function createFruit(){
+  boardNumber = Math.floor(Math.random()*100)
+  idNumber = "sq" + boardNumber.toString()
+  fruitPosition = document.querySelector(`#${idNumber}`)
+  fruitPosition.style.backgroundColor = "red"
 }
+
+function eatFruit(){
+  if(snakePosition === fruitPosition){
+    console.log(snakePosition) 
+    playerScore += 1
+    createFruit()
+  }
+}
+
+
+
+
 
