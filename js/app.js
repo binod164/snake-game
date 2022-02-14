@@ -23,7 +23,10 @@ const leftBtn = document.querySelector(".left")
 const rightBtn = document.querySelector(".right")
 const downBtn = document.querySelector(".down")
 const score = document.querySelector(".currentscore")
-
+const board = document.querySelector(".board")
+const gameOver = document.querySelector(".gameover")
+const message = document.querySelector(".message")
+// const replayBtn = document.querySelector(".replay")
 /*----------------------------- Event Listeners -----------------------------*/
 
 upBtn.addEventListener("click" ,handleClickUp)
@@ -31,6 +34,7 @@ leftBtn.addEventListener("click" ,handleClickLeft)
 rightBtn.addEventListener("click" ,handleClickRight)
 downBtn.addEventListener("click" ,handleClickDown)
 document.addEventListener("keydown", pressedKey)
+// replayBtn.addEventListener("click", init)
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -43,6 +47,7 @@ function init(){
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.style.backgroundColor = "green"
   snakePositions = [snakePosition];
+  createFruit()
   createFruit()
 }
 
@@ -81,9 +86,17 @@ function relateAction(userAction) {
 }
 
 function checkCollision() {
-  // console.log(snakePosition,snakePositions)
   if(snakePositions.includes(snakePosition)){
-    console.log("Game Over")
+    clearTimeout(timeInterval)
+    if(playerScore > highScore){
+      board.style.display = "none"
+      gameOver.style.display = "inline"
+      message.innerHTML = "Congratulations! You beat the high Score"
+    }else{
+      board.style.display = "none"
+      gameOver.style.display = "inline"
+      message.innerHTML = "Game Over"
+    }
   }
 }
 

@@ -51,6 +51,12 @@ div{
   background-color: rgb(86, 179, 185);
 }
 
+section.gameover{
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
 section.score{
   display: flex;
   gap: 70px;
