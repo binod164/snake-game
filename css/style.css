@@ -41,7 +41,7 @@ section.board {
   margin: 0 auto ;
 }
 
-div {
+div{
   border: 1px solid rgb(250, 248, 248);
   font-size: 8vmin;
   text-align: center;
@@ -51,7 +51,7 @@ div {
   background-color: rgb(86, 179, 185);
 }
 
-.score{
+section.score{
   display: flex;
   gap: 70px;
 }
@@ -76,6 +76,10 @@ h2{
   text-shadow: 3px 3px 3px green,
               4px  4px 4px red;
 }
+/* section.btn{
+  display: grid;
+  flex-direction: column;
+} */
 
 button{
   width: 15vmin;
@@ -87,6 +91,3 @@ button{
   color: rgb(86, 179, 185);
   border-color: white;
 }    
-/* .up{
-  margin-top: 3%;
-} */

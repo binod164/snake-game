@@ -23,6 +23,7 @@ const leftBtn = document.querySelector(".left")
 const rightBtn = document.querySelector(".right")
 const downBtn = document.querySelector(".down")
 const score = document.querySelector(".currentscore")
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 upBtn.addEventListener("click" ,handleClickUp)
@@ -79,6 +80,13 @@ function relateAction(userAction) {
   }
 }
 
+function checkCollision() {
+  // console.log(snakePosition,snakePositions)
+  if(snakePositions.includes(snakePosition)){
+    console.log("Game Over")
+  }
+}
+
 function moveSnake() {
   cacheSnakeTail.style.backgroundColor = "";
   for (let i = 0; i < snakeLength; i++) {
@@ -88,6 +96,7 @@ function moveSnake() {
 }
 
 function changePosition() {
+  checkCollision()
   cacheSnakeTail = snakePositions[snakePositions.length - 1];
   if (snakeLength > 1) {
     for (let i = snakeLength - 1; i > 0; i--) {
@@ -95,6 +104,7 @@ function changePosition() {
     }
   }
   snakePositions[0] = snakePosition
+  
   moveSnake()
 }
 
@@ -116,7 +126,7 @@ function arrowUp(){
     id = id - 10
     snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowUp"),200)
+  timeInterval = setTimeout(() => relateAction("ArrowUp"),1000)
   eatFruit()
   changePosition()
 }
@@ -143,7 +153,7 @@ function arrowDown(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
 
-  timeInterval = setTimeout(() => relateAction("ArrowDown"), 200)
+  timeInterval = setTimeout(() => relateAction("ArrowDown"), 1000)
   eatFruit()
   changePosition()
 }
@@ -168,7 +178,7 @@ function arrowLeft(){
       id = id - 1
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 200)
+  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 1000)
   eatFruit()
   changePosition()
 }
@@ -193,7 +203,7 @@ function arrowRight(){
       id = id + 1
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowRight"), 200)
+  timeInterval = setTimeout(() => relateAction("ArrowRight"), 1000)
   eatFruit()
   changePosition()
 }
