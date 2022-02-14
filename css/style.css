@@ -58,8 +58,10 @@ section.score{
 
 .message{
   font-size: 3vmin;
-  background-color: white;
   color: rgb(86, 179, 185);
+  background-color: white;
+  text-shadow: 1px 1px 1px green,
+              1px  1px 1px red;
   display: none;
   padding: 10px;
   border-radius: 10px;

@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-let highScore = 5;
+let highScore = 1;
 
 /*-------------------------------- Variables --------------------------------*/
 
@@ -95,6 +95,7 @@ function checkCollision() {
     if(playerScore > highScore){
       message.style.display = "inline"
       message.innerHTML = "Congratulations! You beat the high Score"
+      confetti.start(2000);
     }else{
       message.style.display = "inline"
       message.innerHTML = "Game Over"  
@@ -104,6 +105,7 @@ function checkCollision() {
 }
 
 function clearGame(){
+  message.style.display = "none"
   for (let i = 0; i < snakeLength; i++) {
     let newSnakePosition = snakePositions[i]
     newSnakePosition.style.backgroundColor = ""
