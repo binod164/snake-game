@@ -51,15 +51,18 @@ div{
   background-color: rgb(86, 179, 185);
 }
 
-section.gameover{
-  display: flex;
-  flex-direction: column;
-  display: none;
-}
-
 section.score{
   display: flex;
   gap: 70px;
+}
+
+.message{
+  font-size: 3vmin;
+  background-color: white;
+  color: rgb(86, 179, 185);
+  display: none;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 h1{ 
@@ -82,18 +85,35 @@ h2{
   text-shadow: 3px 3px 3px green,
               4px  4px 4px red;
 }
-/* section.btn{
-  display: grid;
-  flex-direction: column;
-} */
+
+.up{
+margin-top:auto;
+}
+
+.btn{
+  display: flex;
+}
 
 button{
+  border-radius: 5px;
   width: 15vmin;
   font-size: 2vmin;
   font-family: 'Cinzel', serif;
   font-family: 'Festive', cursive;
   font-family: 'Josefin Slab', serif;
-  background-color: white;
   color: rgb(86, 179, 185);
+  background-color: white;
   border-color: white;
+  text-shadow: 1px 1px 1px green,
+              1px  1px 1px red;
 }    
+
+.replay{
+  border-radius: 5px;
+  margin-top: auto;
+  font-size: 3vmin;
+  color: rgb(86, 179, 185);
+  background-color: white;
+  text-shadow: 1px 1px 1px green,
+              1px  1px 1px red;
+}
