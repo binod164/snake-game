@@ -52,8 +52,9 @@ div {
 }
 
 h1{ 
-  font-size: 7vmin;
+  font-size: 8vmin;
   color: white;
+  margin-top: 3%;
   font-family: 'Cinzel', serif;
   font-family: 'Festive', cursive;
   font-family: 'Josefin Slab', serif;
@@ -62,7 +63,7 @@ h1{
 }
 
 h2{
-  font-size: 4vmin;
+  font-size: 3vmin;
   color: white;
   font-family: 'Cinzel', serif;
   font-family: 'Festive', cursive;
@@ -72,8 +73,15 @@ h2{
 }
 
 button{
-  width: 10%;
+  width: 15vmin;
+  font-size: 2vmin;
   font-family: 'Cinzel', serif;
   font-family: 'Festive', cursive;
   font-family: 'Josefin Slab', serif;
+  background-color: white;
+  color: rgb(86, 179, 185);
+  border-color: white;
 }    
+/* .up{
+  margin-top: 3%;
+} */
