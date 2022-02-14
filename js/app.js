@@ -42,9 +42,12 @@ replayBtn.addEventListener("click", init)
 init()
 
 function init(){
+  clearGame()
+  clearTimeout(timeInterval)
   id = 0
   playerScore = 0
   snakeLength = 1
+  snakePositions = [];
   score.innerHTML = `Current Score: ${playerScore}`
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.style.backgroundColor = "green"
@@ -94,9 +97,20 @@ function checkCollision() {
       message.innerHTML = "Congratulations! You beat the high Score"
     }else{
       message.style.display = "inline"
-      message.innerHTML = "Game Over"
+      message.innerHTML = "Game Over"  
       
     }
+  }
+}
+
+function clearGame(){
+  for (let i = 0; i < snakeLength; i++) {
+    let newSnakePosition = snakePositions[i]
+    newSnakePosition.style.backgroundColor = ""
+  }
+  console.log(fruitPosition)
+  if(fruitPosition){
+  fruitPosition.style.backgroundColor = ""
   }
 }
 
