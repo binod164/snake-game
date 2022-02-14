@@ -22,7 +22,7 @@ const upBtn = document.querySelector(".up")
 const leftBtn = document.querySelector(".left")
 const rightBtn = document.querySelector(".right")
 const downBtn = document.querySelector(".down")
-
+const score = document.querySelector(".currentscore")
 /*----------------------------- Event Listeners -----------------------------*/
 
 upBtn.addEventListener("click" ,handleClickUp)
@@ -38,6 +38,7 @@ function init(){
   id = 0
   playerScore = 0
   snakeLength = 1
+  score.innerHTML = `Current Score: ${playerScore}`
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.style.backgroundColor = "green"
   snakePositions = [snakePosition];
@@ -61,7 +62,6 @@ function handleClickDown(){
 }
 
 function pressedKey(evt){
-  // clearTimeout(timeInterval)
   console.log(evt.code)
   relateAction(evt.code)
 }
@@ -386,6 +386,7 @@ function createFruit(){
 function eatFruit(){
   if(snakePosition === fruitPosition){
     playerScore += 1
+    score.innerHTML = `Current Score: ${playerScore}`
     snakeLength += 1
     createFruit()
   }
