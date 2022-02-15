@@ -14,9 +14,10 @@ let timeInterval
 let bodyPosition
 let id 
 let snakeLength
-let snakePositions = [];
-let cacheSnakeTail;
-let isGameOver = false;
+let snakePositions = []
+let cacheSnakeTail
+let trackAction
+let isGameOver = false
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -85,14 +86,26 @@ function handleClickDown(){
 }
 
 function pressedKey(evt){
+  console.log(trackAction)
   console.log(isGameOver);
   if (!isGameOver) {
-    relateAction(evt.code)
+    if(trackAction === "ArrowRight" && evt.code === "ArrowLeft"){
+      return
+    }else if(trackAction === "ArrowLeft" && evt.code === "ArrowRight"){
+      return
+    }else if(trackAction === "ArrowUp" && evt.code === "ArrowDown"){
+      return
+    }else if(trackAction === "ArrowDown" && evt.code === "ArrowUp"){
+      return
+    }else{
+      relateAction(evt.code)
+    }
   }
 }
 
 function relateAction(userAction) {
   clearTimeout(timeInterval)
+  trackAction = userAction
   if(userAction === "ArrowDown"){
     arrowDown()
   }else if(userAction === "ArrowUp"){
