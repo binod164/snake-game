@@ -16,6 +16,7 @@ let id
 let snakeLength
 let snakePositions = [];
 let cacheSnakeTail;
+let isGameOver = false;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -44,6 +45,7 @@ replayBtn.addEventListener("click", init)
 init()
 
 function init(){
+  isGameOver = false;
   clearGame()
   clearTimeout(timeInterval)
   id = 0
@@ -59,24 +61,34 @@ function init(){
 }
 
 function handleClickUp(){
-  relateAction("ArrowUp")
+  if (!isGameOver) {
+    relateAction("ArrowUp")
+  }
 }
 
 function handleClickLeft(){
-  relateAction("ArrowLeft")
+  if (!isGameOver) {
+    relateAction("ArrowLeft")
+  }
 }
 
 function handleClickRight(){
-  relateAction("ArrowRight")
+  if (!isGameOver) {
+    relateAction("ArrowRight")
+  }
 }
 
 function handleClickDown(){
-  relateAction("ArrowDown")
+  if (!isGameOver) {
+    relateAction("ArrowDown")
+  }
 }
 
 function pressedKey(evt){
-  console.log(evt.code)
-  relateAction(evt.code)
+  console.log(isGameOver);
+  if (!isGameOver) {
+    relateAction(evt.code)
+  }
 }
 
 function relateAction(userAction) {
@@ -95,6 +107,7 @@ function relateAction(userAction) {
 function checkCollision() {
   if(snakePositions.includes(snakePosition)){
     clearTimeout(timeInterval)
+    isGameOver = true;
     if(playerScore > topScore){
       message.style.display = "inline"
       message.innerHTML = "Game Over!!! Congratulations! You beat the high Score."
