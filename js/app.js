@@ -1,6 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
-let highScore = 1;
+let topScore = 10;
+const pointSound = new Audio('../audio/points.wav')
 
 /*-------------------------------- Variables --------------------------------*/
 
@@ -22,7 +23,8 @@ const upBtn = document.querySelector(".up")
 const leftBtn = document.querySelector(".left")
 const rightBtn = document.querySelector(".right")
 const downBtn = document.querySelector(".down")
-const score = document.querySelector(".currentscore")
+const score = document.querySelector(".current-score")
+const highScore = document.querySelector(".high-score")
 const board = document.querySelector(".board")
 const gameOver = document.querySelector(".gameover")
 const message = document.querySelector(".message")
@@ -48,6 +50,7 @@ function init(){
   playerScore = 0
   snakeLength = 1
   snakePositions = [];
+  highScore.innerHTML = `High Score: ${topScore}`
   score.innerHTML = `Current Score: ${playerScore}`
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.style.backgroundColor = "green"
@@ -94,12 +97,11 @@ function checkCollision() {
     clearTimeout(timeInterval)
     if(playerScore > highScore){
       message.style.display = "inline"
-      message.innerHTML = "Congratulations! You beat the high Score"
+      message.innerHTML = "Game Over!!! Congratulations! You beat the high Score."
       confetti.start(2000);
     }else{
       message.style.display = "inline"
-      message.innerHTML = "Game Over"  
-      
+      message.innerHTML = "Game Over!!! Try Again!"    
     }
   }
 }
@@ -238,182 +240,45 @@ function arrowRight(){
 }
 
 function topRow(){
-    if(snakePositions[0] === document.querySelector("#sq0")){
-      id = 90
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq1")){
-      id = 91
+  for(let i = 0; i < 10; i++){
+    if(snakePosition === document.querySelector(`#sq${i}`)){
+      snakePosition.style.backgroundColor = ""
+      id = 90 + i
       snakePosition = document.querySelector(`#sq${id}`)   
-    }else if(snakePosition === document.querySelector("#sq2")){
-      id = 92
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq3")){
-      id = 93
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq4")){
-      id = 94
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq5")){
-      id = 95
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq6")){
-      id = 96
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq7")){
-      id = 97
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq8")){
-      id = 98
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq9")){
-      id = 99
-      snakePosition = document.querySelector(`#sq${id}`)
     }
   }
+}
 
 function bottomRow(){
-    if(snakePosition === document.querySelector("#sq90")){
+  for(let i = 90; i < 100; i++){
+    if(snakePosition === document.querySelector(`#sq${i}`)){
       snakePosition.style.backgroundColor = ""
-      id = 0
-      snakePosition = document.querySelector(`#sq${id}`)     
-    }else if(snakePosition === document.querySelector("#sq91")){
-      snakePosition.style.backgroundColor = ""
-      id = 1
-      snakePosition = document.querySelector(`#sq${id}`)     
-    }else if(snakePosition === document.querySelector("#sq92")){
-      snakePosition.style.backgroundColor = ""
-      id = 2
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq93")){
-      snakePosition.style.backgroundColor = ""
-      id = 3
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq94")){
-      snakePosition.style.backgroundColor = ""
-      id = 4
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq95")){
-      snakePosition.style.backgroundColor = ""
-      id = 5
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq96")){
-      snakePosition.style.backgroundColor = ""
-      id = 6
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq97")){
-      snakePosition.style.backgroundColor = ""
-      id = 7
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq98")){
-      snakePosition.style.backgroundColor = ""
-      id = 8
-      snakePosition = document.querySelector(`#sq${id}`)
-    }else if(snakePosition === document.querySelector("#sq99")){
-      snakePosition.style.backgroundColor = ""
-      id = 9
-      snakePosition = document.querySelector(`#sq${id}`)
+      id = i % 10
+      snakePosition = document.querySelector(`#sq${id}`)   
     }
   }
+}
 
 function leftColumn(){
-    if(snakePosition === document.querySelector("#sq0")){
+  for(let i = 0; i < 100; i+=10){
+    if(snakePosition === document.querySelector(`#sq${i}`)){
       snakePosition.style.backgroundColor = ""
-      id = 9
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq10")){
-      snakePosition.style.backgroundColor = ""
-      id = 19
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq20")){
-      snakePosition.style.backgroundColor = ""
-      id = 29
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq30")){
-      snakePosition.style.backgroundColor = ""
-      id = 39
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq40")){
-      snakePosition.style.backgroundColor = ""
-      id = 49
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq50")){
-      snakePosition.style.backgroundColor = ""
-      id = 59
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq60")){
-      snakePosition.style.backgroundColor = ""
-      id = 69
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq70")){
-      snakePosition.style.backgroundColor = ""
-      id = 79
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq80")){
-      snakePosition.style.backgroundColor = ""
-      id = 89
-      snakePosition = document.querySelector(`#sq${id}`)
-
-    }else if(snakePosition === document.querySelector("#sq90")){
-      snakePosition.style.backgroundColor = ""
-      id = 99
-      snakePosition = document.querySelector(`#sq${id}`)
-
+      id = i + 9
+      snakePosition = document.querySelector(`#sq${id}`)   
     }
-
   }
+}
 
 function rightColumn(){
-  if(snakePosition === document.querySelector("#sq9")){
-    snakePosition.style.backgroundColor = ""
-    id = 0
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq19")){
-    snakePosition.style.backgroundColor = ""
-    id = 10
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq29")){
-    snakePosition.style.backgroundColor = ""
-    id = 20
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq39")){
-    snakePosition.style.backgroundColor = ""
-    id = 30
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq49")){
-    snakePosition.style.backgroundColor = ""
-    id = 40
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq59")){
-    snakePosition.style.backgroundColor = ""
-    id = 50
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq69")){
-    snakePosition.style.backgroundColor = ""
-    id = 60
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq79")){
-    snakePosition.style.backgroundColor = ""
-    id = 70
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq89")){
-    snakePosition.style.backgroundColor = ""
-    id = 80
-    snakePosition = document.querySelector(`#sq${id}`)
-  }else if(snakePosition === document.querySelector("#sq99")){
-    snakePosition.style.backgroundColor = ""
-    id = 90
-    snakePosition = document.querySelector(`#sq${id}`)
+  for(let i = 9; i < 100; i+=10){
+    if(snakePosition === document.querySelector(`#sq${i}`)){
+      snakePosition.style.backgroundColor = ""
+      id = i - 9
+      snakePosition = document.querySelector(`#sq${id}`)   
+    }
   }
-
 }
+
 
 function createFruit(){
   boardNumber = Math.floor(Math.random()*100)
@@ -424,6 +289,8 @@ function createFruit(){
 
 function eatFruit(){
   if(snakePosition === fruitPosition){
+    pointSound.play()
+    pointSound.volume = 0.1
     playerScore += 1
     score.innerHTML = `Current Score: ${playerScore}`
     snakeLength += 1
