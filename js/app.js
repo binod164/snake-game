@@ -95,7 +95,7 @@ function relateAction(userAction) {
 function checkCollision() {
   if(snakePositions.includes(snakePosition)){
     clearTimeout(timeInterval)
-    if(playerScore > highScore){
+    if(playerScore > topScore){
       message.style.display = "inline"
       message.innerHTML = "Game Over!!! Congratulations! You beat the high Score."
       confetti.start(2000);
@@ -282,8 +282,7 @@ function rightColumn(){
 
 function createFruit(){
   boardNumber = Math.floor(Math.random()*100)
-  idNumber = "sq" + boardNumber.toString()
-  fruitPosition = document.querySelector(`#${idNumber}`)
+  fruitPosition = document.querySelector(`#sq${boardNumber}`)
   fruitPosition.style.backgroundColor = "red"
 }
 
