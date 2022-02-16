@@ -2,7 +2,7 @@
 
 let topScore = 5;
 const pointSound = new Audio('../audio/points.wav')
-
+const playerDies = new Audio('../audio/playerDies.wav')
 /*-------------------------------- Variables --------------------------------*/
 
 let playerScore
@@ -32,7 +32,7 @@ const gameOver = document.querySelector(".gameover")
 const message = document.querySelector(".message")
 const replayBtn = document.querySelector(".replay")
 const modeBtn = document.querySelector(".game-mode")
-
+console.log(message)
 /*----------------------------- Event Listeners -----------------------------*/
 
 upBtn.addEventListener("click" ,handleClickUp)
@@ -112,18 +112,18 @@ function handleClickDown(){
 }
 
 function pressedKey(evt){
-  if (!isGameOver) {
-    if((trackAction === "ArrowRight" || trackAction === "ArrowLeft") && evt.code === "ArrowLeft"){
-      return
-    }else if((trackAction === "ArrowLeft" || trackAction === "ArrowRight") && evt.code === "ArrowRight"){
-      return
-    }else if((trackAction === "ArrowUp" || trackAction === "ArrowDown") && evt.code === "ArrowDown"){
-      return
-    }else if((trackAction === "ArrowDown" || trackAction === "ArrowUp") && evt.code === "ArrowUp"){
-      return
-    }else{
+  if(!isGameOver) {
+      if((trackAction === "ArrowRight" || trackAction === "ArrowLeft") && evt.code === "ArrowLeft"){
+        return
+      }else if((trackAction === "ArrowLeft" || trackAction === "ArrowRight") && evt.code === "ArrowRight"){
+        return
+      }else if((trackAction === "ArrowUp" || trackAction === "ArrowDown") && evt.code === "ArrowDown"){
+        return
+      }else if((trackAction === "ArrowDown" || trackAction === "ArrowUp") && evt.code === "ArrowUp"){
+        return
+      }else{
       relateAction(evt.code)
-    }
+      }
   }
 }
 
@@ -143,6 +143,7 @@ function relateAction(userAction) {
 
 function checkCollision() {
   if(snakePositions.includes(snakePosition)){
+    playerDies.play()
     clearTimeout(timeInterval)
     isGameOver = true;
     if(playerScore > topScore){
@@ -203,11 +204,11 @@ function arrowUp(){
     ||snakePosition === document.querySelector("#sq8")
     ||snakePosition === document.querySelector("#sq9"))
   {
-    topRow()
+      topRow()
   }else{
-    snakePosition.style.backgroundColor = ""
-    id = id - 10
-    snakePosition = document.querySelector(`#sq${id}`)
+      snakePosition.style.backgroundColor = ""
+      id = id - 10
+      snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowUp"),100)
   changePosition()
@@ -333,7 +334,6 @@ function createFruit(){
   fruitPosition = document.querySelector(`#sq${boardNumber}`)
   fruitPosition.style.backgroundColor = "red"
   fruitPositions.push(fruitPosition)
-  console.log(fruitPositions)
 }
 
 function eatFruit(){
