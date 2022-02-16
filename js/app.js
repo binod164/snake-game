@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-let topScore = 10;
+let topScore = 5;
 const pointSound = new Audio('../audio/points.wav')
 
 /*-------------------------------- Variables --------------------------------*/
@@ -63,24 +63,36 @@ function init(){
 
 function handleClickUp(){
   if (!isGameOver) {
+    if(trackAction === "ArrowDown" && evt.code === "ArrowUp"){
+      return
+    }
     relateAction("ArrowUp")
   }
 }
 
 function handleClickLeft(){
   if (!isGameOver) {
+    if(trackAction === "ArrowRight" && evt.code === "ArrowLeft"){
+      return
+    }
     relateAction("ArrowLeft")
   }
 }
 
 function handleClickRight(){
   if (!isGameOver) {
+    if(trackAction === "ArrowLeft" && evt.code === "ArrowRight"){
+      return
+    }
     relateAction("ArrowRight")
   }
 }
 
 function handleClickDown(){
   if (!isGameOver) {
+    if(trackAction === "ArrowUp" && evt.code === "ArrowDown"){
+      return
+    }
     relateAction("ArrowDown")
   }
 }
