@@ -49,7 +49,6 @@ init()
 function init(){
   isGameOver = false;
   clearGame()
-  clearTimeout(timeInterval)
   id = 0
   playerScore = 0
   snakeLength = 1
@@ -112,8 +111,6 @@ function handleClickDown(){
 }
 
 function pressedKey(evt){
-  console.log(trackAction)
-  console.log(isGameOver);
   if (!isGameOver) {
     if(trackAction === "ArrowRight" && evt.code === "ArrowLeft"){
       return
@@ -212,7 +209,6 @@ function arrowUp(){
     snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowUp"),1000)
-  // eatFruit()
   changePosition()
 }
 
@@ -239,7 +235,6 @@ function arrowDown(){
   }
 
   timeInterval = setTimeout(() => relateAction("ArrowDown"), 1000)
-  // eatFruit()
   changePosition()
 }
 
@@ -264,7 +259,6 @@ function arrowLeft(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowLeft"), 1000)
-  // eatFruit()
   changePosition()
 }
 
@@ -289,7 +283,6 @@ function arrowRight(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowRight"), 1000)
-  // eatFruit()
   changePosition()
 }
 
