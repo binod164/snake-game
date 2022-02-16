@@ -49,6 +49,7 @@ init()
 function init(){
   isGameOver = false;
   clearGame()
+  clearTimeout(timeInterval)
   id = 0
   playerScore = 0
   snakeLength = 1
@@ -328,7 +329,7 @@ function rightColumn(){
 
 
 function createFruit(){
-  boardNumber = Math.floor(Math.random()*50)
+  boardNumber = Math.floor((Math.random() * 99) + 1)
   fruitPosition = document.querySelector(`#sq${boardNumber}`)
   fruitPosition.style.backgroundColor = "red"
   fruitPositions.push(fruitPosition)
