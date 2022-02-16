@@ -77,7 +77,7 @@ function gameMode(){
 
 function handleClickUp(){
   if (!isGameOver) {
-    if(trackAction === "ArrowDown" && evt.code === "ArrowUp"){
+    if((trackAction === "ArrowDown" || trackAction === "ArrowUp") && evt.code === "ArrowUp" ){
       return
     }
     relateAction("ArrowUp")
@@ -86,7 +86,7 @@ function handleClickUp(){
 
 function handleClickLeft(){
   if (!isGameOver) {
-    if(trackAction === "ArrowRight" && evt.code === "ArrowLeft"){
+    if((trackAction === "ArrowRight" || trackAction === "ArrowLeft") && evt.code === "ArrowLeft"){
       return
     }
     relateAction("ArrowLeft")
@@ -95,7 +95,7 @@ function handleClickLeft(){
 
 function handleClickRight(){
   if (!isGameOver) {
-    if(trackAction === "ArrowLeft" && evt.code === "ArrowRight"){
+    if((trackAction === "ArrowLeft" || trackAction === "ArrowRight") && evt.code === "ArrowRight"){
       return
     }
     relateAction("ArrowRight")
@@ -104,7 +104,7 @@ function handleClickRight(){
 
 function handleClickDown(){
   if (!isGameOver) {
-    if(trackAction === "ArrowUp" && evt.code === "ArrowDown"){
+    if((trackAction === "ArrowUp" || trackAction === "ArrowDown") && evt.code === "ArrowDown"){
       return
     }
     relateAction("ArrowDown")
@@ -113,13 +113,13 @@ function handleClickDown(){
 
 function pressedKey(evt){
   if (!isGameOver) {
-    if(trackAction === "ArrowRight" && evt.code === "ArrowLeft"){
+    if((trackAction === "ArrowRight" || trackAction === "ArrowLeft") && evt.code === "ArrowLeft"){
       return
-    }else if(trackAction === "ArrowLeft" && evt.code === "ArrowRight"){
+    }else if((trackAction === "ArrowLeft" || trackAction === "ArrowRight") && evt.code === "ArrowRight"){
       return
-    }else if(trackAction === "ArrowUp" && evt.code === "ArrowDown"){
+    }else if((trackAction === "ArrowUp" || trackAction === "ArrowDown") && evt.code === "ArrowDown"){
       return
-    }else if(trackAction === "ArrowDown" && evt.code === "ArrowUp"){
+    }else if((trackAction === "ArrowDown" || trackAction === "ArrowUp") && evt.code === "ArrowUp"){
       return
     }else{
       relateAction(evt.code)

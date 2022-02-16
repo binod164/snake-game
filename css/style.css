@@ -118,3 +118,30 @@ button{
   text-shadow: 1px 1px 1px green,
               1px  1px 1px red;
 }
+
+@media only screen and (max-width: 500px) {
+
+  body {
+    background-size: cover ;
+  }
+
+  section.board {
+    grid-template-rows: repeat(10, 9vmin);
+    grid-template-columns: repeat(10, 9vmin);
+    margin: 4vmin;
+  }
+
+  button{
+    width: 25vmin;
+    height: 15vmin;
+  }
+  
+  .game-mode{
+    height: 5vmin;
+  }
+
+  .replay{
+    height: 10vmin;
+    width: 40vmin;
+  }
+}
