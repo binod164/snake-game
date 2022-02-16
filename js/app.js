@@ -209,7 +209,7 @@ function arrowUp(){
     id = id - 10
     snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowUp"),1000)
+  timeInterval = setTimeout(() => relateAction("ArrowUp"),100)
   changePosition()
 }
 
@@ -235,7 +235,7 @@ function arrowDown(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
 
-  timeInterval = setTimeout(() => relateAction("ArrowDown"), 1000)
+  timeInterval = setTimeout(() => relateAction("ArrowDown"), 100)
   changePosition()
 }
 
@@ -259,7 +259,7 @@ function arrowLeft(){
       id = id - 1
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 1000)
+  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 100)
   changePosition()
 }
 
@@ -283,7 +283,7 @@ function arrowRight(){
       id = id + 1
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowRight"), 1000)
+  timeInterval = setTimeout(() => relateAction("ArrowRight"), 100)
   changePosition()
 }
 
