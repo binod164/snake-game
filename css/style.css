@@ -68,7 +68,7 @@ section.score{
 h1{ 
   font-size: 8vmin;
   color: white;
-  margin-top: 3%;
+  margin-top: 1%;
   margin-bottom: 0;
   font-family: 'Cinzel', serif;
   font-family: 'Festive', cursive;
@@ -88,7 +88,7 @@ h2{
 }
 
 .up{
-margin-top:20px;
+margin-top:0.5%;
 }
 
 .btn{
@@ -111,7 +111,7 @@ button{
 
 .replay{
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 0.5%;
   font-size: 3vmin;
   color: rgb(86, 179, 185);
   background-color: white;
