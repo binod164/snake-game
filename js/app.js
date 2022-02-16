@@ -14,9 +14,10 @@ let timeInterval
 let bodyPosition
 let id 
 let snakeLength
-let snakePositions = []
 let cacheSnakeTail
 let trackAction
+let snakePositions = []
+let fruitPositions = [];
 let isGameOver = false
 
 /*------------------------ Cached Element References ------------------------*/
@@ -27,10 +28,10 @@ const rightBtn = document.querySelector(".right")
 const downBtn = document.querySelector(".down")
 const score = document.querySelector(".current-score")
 const highScore = document.querySelector(".high-score")
-const board = document.querySelector(".board")
 const gameOver = document.querySelector(".gameover")
 const message = document.querySelector(".message")
 const replayBtn = document.querySelector(".replay")
+const modeBtn = document.querySelector(".game-mode")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -40,7 +41,7 @@ rightBtn.addEventListener("click" ,handleClickRight)
 downBtn.addEventListener("click" ,handleClickDown)
 document.addEventListener("keydown", pressedKey)
 replayBtn.addEventListener("click", init)
-
+modeBtn.addEventListener("click", gameMode)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
@@ -52,13 +53,26 @@ function init(){
   id = 0
   playerScore = 0
   snakeLength = 1
-  snakePositions = [];
+  snakePositions = []
+  fruitPositions =[]
+  trackAction = ""
   highScore.innerHTML = `High Score: ${topScore}`
   score.innerHTML = `Current Score: ${playerScore}`
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.style.backgroundColor = "green"
   snakePositions = [snakePosition];
   createFruit()
+  createFruit()
+}
+
+function gameMode(){
+  if(modeBtn.innerHTML === "Dark mode"){
+    modeBtn.innerHTML = "Color mode"
+    document.body.style.background = "black"
+  }else{
+    modeBtn.innerHTML = "Dark mode"
+    document.body.style.background = ""
+  }
 }
 
 function handleClickUp(){
@@ -150,9 +164,10 @@ function clearGame(){
     let newSnakePosition = snakePositions[i]
     newSnakePosition.style.backgroundColor = ""
   }
-  console.log(fruitPosition)
-  if(fruitPosition){
-  fruitPosition.style.backgroundColor = ""
+  if(fruitPositions.length){
+    for(let i =0; i< fruitPositions.length; i++){
+      fruitPositions[i].style.backgroundColor = ""
+    }
   }
 }
 
@@ -166,6 +181,7 @@ function moveSnake() {
 
 function changePosition() {
   checkCollision()
+  eatFruit()
   cacheSnakeTail = snakePositions[snakePositions.length - 1];
   if (snakeLength > 1) {
     for (let i = snakeLength - 1; i > 0; i--) {
@@ -196,7 +212,7 @@ function arrowUp(){
     snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowUp"),1000)
-  eatFruit()
+  // eatFruit()
   changePosition()
 }
 
@@ -223,7 +239,7 @@ function arrowDown(){
   }
 
   timeInterval = setTimeout(() => relateAction("ArrowDown"), 1000)
-  eatFruit()
+  // eatFruit()
   changePosition()
 }
 
@@ -248,7 +264,7 @@ function arrowLeft(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowLeft"), 1000)
-  eatFruit()
+  // eatFruit()
   changePosition()
 }
 
@@ -273,7 +289,7 @@ function arrowRight(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
   timeInterval = setTimeout(() => relateAction("ArrowRight"), 1000)
-  eatFruit()
+  // eatFruit()
   changePosition()
 }
 
@@ -319,18 +335,26 @@ function rightColumn(){
 
 
 function createFruit(){
-  boardNumber = Math.floor(Math.random()*100)
+  boardNumber = Math.floor(Math.random()*50)
   fruitPosition = document.querySelector(`#sq${boardNumber}`)
   fruitPosition.style.backgroundColor = "red"
+  fruitPositions.push(fruitPosition)
+  console.log(fruitPositions)
 }
 
 function eatFruit(){
-  if(snakePosition === fruitPosition){
+  let fruitIdx = fruitPositions.indexOf(snakePosition);
+  if (fruitIdx >= 0) {
     pointSound.play()
     pointSound.volume = 0.1
     playerScore += 1
     score.innerHTML = `Current Score: ${playerScore}`
     snakeLength += 1
+    if (fruitIdx === 0) {
+      fruitPositions.shift();
+    } else {
+      fruitPositions.pop();
+    }
     createFruit()
   }
 }
