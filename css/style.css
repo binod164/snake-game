@@ -140,6 +140,7 @@ button{
   }
 
   .replay{
+    margin-top: 10vmin;
     height: 10vmin;
     width: 40vmin;
   }
