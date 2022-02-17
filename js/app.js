@@ -8,11 +8,9 @@ const playerDies = new Audio('../audio/playerDies.wav')
 let playerScore
 let topScore
 let boardNumber
-let idNumber
 let snakePosition
 let fruitPosition
 let timeInterval
-let bodyPosition
 let id 
 let snakeLength
 let cacheSnakeTail
@@ -30,7 +28,6 @@ const rightBtn = document.querySelector(".right")
 const downBtn = document.querySelector(".down")
 const score = document.querySelector(".current-score")
 const highScore = document.querySelector(".high-score")
-const gameOver = document.querySelector(".gameover")
 const message = document.querySelector(".message")
 const replayBtn = document.querySelector(".replay")
 const modeBtn = document.querySelector(".game-mode")
@@ -367,8 +364,8 @@ function createFruit(){
     boardNumber = Math.floor((Math.random() * 99) + 1)
     fruitPosition = document.querySelector(`#sq${boardNumber}`)
   }
-    fruitPosition.style.backgroundColor = "red"
-    fruitPositions.push(fruitPosition)
+  fruitPosition.style.backgroundColor = "red"
+  fruitPositions.push(fruitPosition)
 }
 
 function eatFruit(){
