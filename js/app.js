@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-let topScore = 5;
+let topScore = 20;
 const pointSound = new Audio('../audio/points.wav')
 const playerDies = new Audio('../audio/playerDies.wav')
 /*-------------------------------- Variables --------------------------------*/
@@ -17,7 +17,7 @@ let snakeLength
 let cacheSnakeTail
 let trackAction
 let snakePositions = []
-let fruitPositions = [];
+let fruitPositions = []
 let isGameOver = false
 
 /*------------------------ Cached Element References ------------------------*/
@@ -32,7 +32,7 @@ const gameOver = document.querySelector(".gameover")
 const message = document.querySelector(".message")
 const replayBtn = document.querySelector(".replay")
 const modeBtn = document.querySelector(".game-mode")
-console.log(message)
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 upBtn.addEventListener("click" ,handleClickUp)
@@ -330,10 +330,14 @@ function rightColumn(){
 
 
 function createFruit(){
-  boardNumber = Math.floor((Math.random() * 99) + 1)
+  boardNumber = Math.floor((Math.random() * 100))
   fruitPosition = document.querySelector(`#sq${boardNumber}`)
-  fruitPosition.style.backgroundColor = "red"
-  fruitPositions.push(fruitPosition)
+  while(snakePositions.includes(fruitPosition)) {
+    boardNumber = Math.floor((Math.random() * 99) + 1)
+    fruitPosition = document.querySelector(`#sq${boardNumber}`)
+  }
+    fruitPosition.style.backgroundColor = "red"
+    fruitPositions.push(fruitPosition)
 }
 
 function eatFruit(){
@@ -352,8 +356,5 @@ function eatFruit(){
     createFruit()
   }
 }
-
-
-
 
 
