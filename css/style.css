@@ -77,7 +77,7 @@ h1{
 }
 
 h2{
-  font-size: 3vmin;
+  font-size: 2vmin;
   color: white;
   font-family: 'Cinzel', serif;
   font-family: 'Festive', cursive;
@@ -111,7 +111,7 @@ button{
 .replay{
   border-radius: 5px;
   margin-top: 0.5%;
-  font-size: 3vmin;
+  font-size: 2.5vmin;
   color: rgb(86, 179, 185);
   background-color: white;
   text-shadow: 1px 1px 1px green,
@@ -135,11 +135,11 @@ button{
     height: 15vmin;
   }
   
-  .game-mode{
+  .game-mode, .easy, .medium, .beast{
     height: 5vmin;
   }
 
-  .replay{
+  .replay {
     margin-top: 10vmin;
     height: 10vmin;
     width: 40vmin;

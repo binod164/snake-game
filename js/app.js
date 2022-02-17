@@ -1,11 +1,12 @@
 /*-------------------------------- Constants --------------------------------*/
 
-let topScore = 20;
+
 const pointSound = new Audio('../audio/points.wav')
 const playerDies = new Audio('../audio/playerDies.wav')
 /*-------------------------------- Variables --------------------------------*/
 
 let playerScore
+let topScore
 let boardNumber
 let idNumber
 let snakePosition
@@ -16,6 +17,7 @@ let id
 let snakeLength
 let cacheSnakeTail
 let trackAction
+let snakeSpeed
 let snakePositions = []
 let fruitPositions = []
 let isGameOver = false
@@ -32,6 +34,9 @@ const gameOver = document.querySelector(".gameover")
 const message = document.querySelector(".message")
 const replayBtn = document.querySelector(".replay")
 const modeBtn = document.querySelector(".game-mode")
+const easyLevel = document.querySelector(".easy")
+const mediumLevel = document.querySelector(".medium")
+const beastLevel = document.querySelector(".beast")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -42,9 +47,30 @@ downBtn.addEventListener("click" ,handleClickDown)
 document.addEventListener("keydown", pressedKey)
 replayBtn.addEventListener("click", init)
 modeBtn.addEventListener("click", gameMode)
+easyLevel.addEventListener("click", easy)
+mediumLevel.addEventListener("click", medium)
+beastLevel.addEventListener("click", beast)
+
+
 /*-------------------------------- Functions --------------------------------*/
 
-init()
+function easy(){
+  snakeSpeed = 500
+  topScore = 5;
+  init()
+}
+
+function medium(){
+  snakeSpeed = 100
+  topScore = 20;
+  init()
+}
+
+function beast(){
+  snakeSpeed = 70
+  topScore = 20;
+  init()
+}
 
 function init(){
   isGameOver = false;
@@ -210,7 +236,7 @@ function arrowUp(){
       id = id - 10
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowUp"),100)
+  timeInterval = setTimeout(() => relateAction("ArrowUp"),snakeSpeed)
   changePosition()
 }
 
@@ -236,7 +262,7 @@ function arrowDown(){
       snakePosition = document.querySelector(`#sq${id}`)
   }
 
-  timeInterval = setTimeout(() => relateAction("ArrowDown"), 100)
+  timeInterval = setTimeout(() => relateAction("ArrowDown"), snakeSpeed)
   changePosition()
 }
 
@@ -260,7 +286,7 @@ function arrowLeft(){
       id = id - 1
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowLeft"), 100)
+  timeInterval = setTimeout(() => relateAction("ArrowLeft"), snakeSpeed)
   changePosition()
 }
 
@@ -284,7 +310,7 @@ function arrowRight(){
       id = id + 1
       snakePosition = document.querySelector(`#sq${id}`)
   }
-  timeInterval = setTimeout(() => relateAction("ArrowRight"), 100)
+  timeInterval = setTimeout(() => relateAction("ArrowRight"), snakeSpeed)
   changePosition()
 }
 
