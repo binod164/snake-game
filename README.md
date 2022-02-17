@@ -5,7 +5,7 @@ The concept of Snake game was orginated from an arcade game Blockade. Blockade w
 The goal of the Snake game is to eat as many fruits as possible and get longer without colliding with its own body.
 ***
 
-## [Play my version of Snake game here](http://snake-gamemyversion.surge.sh/)
+## <a href="http://snake-gamemyversion.surge.sh/" target="_blank">Play my version of Snake here</a>
 
 ***
 ## Screenshots of my game:
