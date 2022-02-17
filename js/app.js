@@ -170,6 +170,7 @@ function relateAction(userAction) {
 function checkCollision() {
   if(snakePositions.includes(snakePosition)){
     playerDies.play()
+    playerDies.volume = 0.1
     clearTimeout(timeInterval)
     isGameOver = true;
     if(playerScore > topScore){
@@ -358,7 +359,7 @@ function rightColumn(){
 function createFruit(){
   boardNumber = Math.floor((Math.random() * 100))
   fruitPosition = document.querySelector(`#sq${boardNumber}`)
-  while(snakePositions.includes(fruitPosition)) {
+  while(snakePositions.includes(fruitPosition)|| fruitPositions.includes(fruitPosition) ) {
     boardNumber = Math.floor((Math.random() * 99) + 1)
     fruitPosition = document.querySelector(`#sq${boardNumber}`)
   }
