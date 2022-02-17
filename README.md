@@ -5,8 +5,8 @@ The concept of Snake game was orginated from an arcade game Blockade. Blockade w
 
 Play my version of Snake game here: https://binod164.github.io/snake-game/
 
-<img src = "https://i.imgur.com/I38JSmK.png">
-<img src = "https://i.imgur.com/WOixHPn.png">
+<img src = "https://i.imgur.com/xAiha7T.png">
+<img src = "https://i.imgur.com/nPGfw6x.png">
 
 Technologies Useed: JavaScript , HTML , CSS
 
