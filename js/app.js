@@ -138,18 +138,22 @@ function handleClickDown(){
 }
 
 function pressedKey(evt){
-  if(!isGameOver) {
-      if((trackAction === "ArrowRight" || trackAction === "ArrowLeft") && evt.code === "ArrowLeft"){
-        return
-      }else if((trackAction === "ArrowLeft" || trackAction === "ArrowRight") && evt.code === "ArrowRight"){
-        return
-      }else if((trackAction === "ArrowUp" || trackAction === "ArrowDown") && evt.code === "ArrowDown"){
-        return
-      }else if((trackAction === "ArrowDown" || trackAction === "ArrowUp") && evt.code === "ArrowUp"){
-        return
-      }else{
-      relateAction(evt.code)
-      }
+  if(evt.code === "ArrowRight" || evt.code === "ArrowLeft" || evt.code === "ArrowUp" || evt.code === "ArrowDown" ){
+    if(!isGameOver) {
+        if((trackAction === "ArrowRight" || trackAction === "ArrowLeft") && evt.code === "ArrowLeft"){
+          return
+        }else if((trackAction === "ArrowLeft" || trackAction === "ArrowRight") && evt.code === "ArrowRight"){
+          return
+        }else if((trackAction === "ArrowUp" || trackAction === "ArrowDown") && evt.code === "ArrowDown"){
+          return
+        }else if((trackAction === "ArrowDown" || trackAction === "ArrowUp") && evt.code === "ArrowUp"){
+          return
+        }else{
+        relateAction(evt.code)
+        }
+    }
+  }else{
+    evt.preventDefault()
   }
 }
 
