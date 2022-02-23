@@ -53,24 +53,24 @@ beastLevel.addEventListener("click", beast)
 
 function easy(){
   snakeSpeed = 500
-  topScore = 5;
+  topScore = 5
   init()
 }
 
 function medium(){
   snakeSpeed = 100
-  topScore = 20;
+  topScore = 20
   init()
 }
 
 function beast(){
   snakeSpeed = 70
-  topScore = 20;
+  topScore = 20
   init()
 }
 
 function init(){
-  isGameOver = false;
+  isGameOver = false
   clearGame()
   clearTimeout(timeInterval)
   id = 0
@@ -83,7 +83,7 @@ function init(){
   score.innerHTML = `Current Score: ${playerScore}`
   snakePosition = document.querySelector(`#sq${id}`)
   snakePosition.style.backgroundColor = "green"
-  snakePositions = [snakePosition];
+  snakePositions = [snakePosition]
   createFruit()
   createFruit()
 }
@@ -173,11 +173,11 @@ function checkCollision() {
     playerDies.play()
     playerDies.volume = 0.1
     clearTimeout(timeInterval)
-    isGameOver = true;
+    isGameOver = true
     if(playerScore > topScore){
       message.style.display = "inline"
       message.innerHTML = "Game Over!!! Congratulations! You beat the high Score."
-      confetti.start(2000);
+      confetti.start(2000)
     }else{
       message.style.display = "inline"
       message.innerHTML = "Game Over!!! Try Again!"    
@@ -199,7 +199,7 @@ function clearGame(){
 }
 
 function moveSnake() {
-  cacheSnakeTail.style.backgroundColor = "";
+  cacheSnakeTail.style.backgroundColor = ""
   for (let i = 0; i < snakeLength; i++) {
     let newSnakePosition = snakePositions[i]
     newSnakePosition.style.backgroundColor = "green"
@@ -209,7 +209,7 @@ function moveSnake() {
 function changePosition() {
   checkCollision()
   eatFruit()
-  cacheSnakeTail = snakePositions[snakePositions.length - 1];
+  cacheSnakeTail = snakePositions[snakePositions.length - 1]
   if (snakeLength > 1) {
     for (let i = snakeLength - 1; i > 0; i--) {
       snakePositions[i] = snakePositions[i-1]
@@ -369,7 +369,7 @@ function createFruit(){
 }
 
 function eatFruit(){
-  let fruitIdx = fruitPositions.indexOf(snakePosition);
+  let fruitIdx = fruitPositions.indexOf(snakePosition)
   if (fruitIdx >= 0) {
     pointSound.play()
     pointSound.volume = 0.1
@@ -377,9 +377,9 @@ function eatFruit(){
     score.innerHTML = `Current Score: ${playerScore}`
     snakeLength += 1
     if (fruitIdx === 0) {
-      fruitPositions.shift();
+      fruitPositions.shift()
     } else {
-      fruitPositions.pop();
+      fruitPositions.pop()
     }
     createFruit()
   }
